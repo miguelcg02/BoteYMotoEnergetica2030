@@ -1,0 +1,35 @@
+#! /usr/bin/env node
+
+var get = require('../server/get/get')
+
+function app(req, res){
+
+    if(req.method === 'GET'){
+        
+        get(req,res);
+        console.log('Get realizado');
+    }
+    else
+    if(req.method === 'POST'){
+        post(req,res);
+    }
+    else
+
+        res.end();
+}
+
+function post(req,res){
+    var body = '';
+    req.on('data', data =>{
+        body += data;
+    });
+
+    req.on('end',()=>{
+        console.log(body);
+        res.statusCode = 200;
+        res.setHeader('Content-Type','application/json');
+        res.end();
+    })
+}
+
+module.exports = app;

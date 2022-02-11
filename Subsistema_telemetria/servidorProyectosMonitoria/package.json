@@ -1,0 +1,12 @@
+{
+  "name": "node-server",
+  "version": "0.0.1",
+  "description": "servidor node para monitoria",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MiguelCalvache",
+  "license": "ISC"
+}
